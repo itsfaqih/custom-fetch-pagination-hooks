@@ -5,7 +5,7 @@ export default function usePagination(initialData, perPage = 6) {
   const [currentPage, setCurrentPage] = useState(1);
   const [maxPageNumber, setMaxPageNumber] = useState(null);
 
-  const nextPageNumber = maxPageNumber === 1 ? null : currentPage + 1;
+  const nextPageNumber = currentPage === maxPageNumber ? null : currentPage + 1;
   const previousPageNumber = currentPage === 1 ? null : currentPage - 1;
 
   useEffect(() => {
